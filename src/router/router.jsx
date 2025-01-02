@@ -17,12 +17,19 @@ const rootRouter = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: "/favorites",
+    element: <SecondHeader />,
+    children: [
       {
         path: "/favorites",
         element: <Favorites />,
       },
     ],
   },
+
   {
     path: "/pokemon/:name",
     element: <SecondHeader />,

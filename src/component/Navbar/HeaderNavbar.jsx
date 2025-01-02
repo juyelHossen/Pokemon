@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router";
 import favorites from "../../assets/favorite.png";
 import searchImg from "../../assets/search.png";
 import { setSearchBar } from "../../features/search/searchSlice";
+import FilterPokemon from "./Filter/Filter";
 import Search from "./search";
 
 const HeaderNav = () => {
@@ -15,17 +16,21 @@ const HeaderNav = () => {
     <div className="min-h-screen">
       <div className=" text-black dark:text-white bg-slate-100 dark:bg-slate-800 sticky top-0 left-0">
         <nav className="flex items-center justify-between container mx-auto px-5 sm:px-0 relative">
-          <Link to={"/"}>
-            <h1
-              className="text-2xl md:text-3xl font-bold text-indigo-500  py-3 md:py-4 relative group"
-              onClick={() => dispatch(setSearchBar(false))}
-            >
-              Pokemon
-              <span className="hidden group-hover:inline px-1 bg-slate-200 absolute top-10 -right-2 text-sm text-gray-600 rounded">
-                Home
-              </span>
-            </h1>
-          </Link>
+          <div className="flex items-center gap-7">
+            <Link to={"/"}>
+              <h1
+                className="text-2xl md:text-3xl font-bold text-indigo-500  py-3 md:py-4 relative group"
+                onClick={() => dispatch(setSearchBar(false))}
+              >
+                Pokemon
+                <span className="hidden group-hover:inline px-1 bg-slate-200 absolute top-10 -right-2 text-sm text-gray-600 rounded">
+                  Home
+                </span>
+              </h1>
+            </Link>
+
+            <FilterPokemon />
+          </div>
 
           <ul className="list-none flex items-center gap-6 text-xl p-0">
             <div className="relative">

@@ -6,6 +6,7 @@ const Home = () => {
   const [poke, setPoke] = useState([]);
   const [loading, setLoading] = useState(true);
   const search = useSelector((state) => state.search.search);
+  const PokeType = useSelector((state) => state.PokemonType.pokemonType);
 
   // fetch Pokemon from api
   const fetchPokemon = async () => {
@@ -14,12 +15,32 @@ const Home = () => {
     setPoke(data.results);
     setLoading(false);
   };
+
+  // fetch pokemon by type
+  const FilterByType = async () => {
+    if (PokeType === "all") {
+      await fetchPokemon();
+    } else {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/type/${PokeType}?limit=50`
+      );
+      const data = await response.json();
+
+      const filteredPokemon = data.pokemon.map((p) => p.pokemon);
+      setPoke(filteredPokemon);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetchPokemon();
-  }, []);
+    FilterByType();
+  }, [PokeType]);
+
+  // Sort pokemon by first letter name A-Z
+  const sortPoke = poke.slice().sort((a, b) => a.name.localeCompare(b.name));
 
   // Filter Pokemon for search
-  const filteredPoke = poke?.filter((pokemon) =>
+  const filteredPoke = sortPoke?.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(search.toLowerCase())
   );
 
