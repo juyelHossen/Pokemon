@@ -23,7 +23,7 @@ const Details = () => {
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-500"></div>
     </div>
   ) : (
-    <div className="container mx-auto mt-5">
+    <div className="container dark:bg-gray-900 dark:text-white mx-auto mt-5">
       <div className="md:mx-0 md:flex w-full md:justify-between md:items-center">
         <div className="text-center md:w-2/5 mb-5 px-12">
           <img
@@ -38,7 +38,7 @@ const Details = () => {
         </div>
 
         <div className=" border-x-2">
-          <h1 className="bg-slate-200 text-xl font-semibold text-center">
+          <h1 className="bg-slate-200 text-xl font-semibold text-center text-black">
             Details
           </h1>
           <div className="mb-1 mt-1 flex border-b-2 px-3 pt-3 pb-3">
@@ -47,7 +47,7 @@ const Details = () => {
               {pokemonDetails.types.map((type) => (
                 <li
                   key={type.type.name}
-                  className="text-md capitalize p-1 bg-slate-200 rounded"
+                  className="text-md capitalize p-1 bg-slate-200 rounded text-black"
                 >
                   {type.type.name}
                 </li>
@@ -61,7 +61,7 @@ const Details = () => {
               {pokemonDetails.abilities.map((ability) => (
                 <li
                   key={ability.ability.name}
-                  className="capitalize text-md p-1 bg-slate-200 rounded"
+                  className="capitalize text-md p-1 bg-slate-200 rounded text-black"
                 >
                   {ability.ability.name}
                 </li>
@@ -69,7 +69,7 @@ const Details = () => {
             </ul>
           </div>
 
-          <div className="mb-1 flex flex-wrap border-b-2 pb-3 px-3">
+          <div className="flex flex-wrap border-b-2 pb-3 px-3">
             <h2 className="text-lg font-bold inline-block w-28">
               Base Stats :
             </h2>
@@ -77,7 +77,7 @@ const Details = () => {
               {pokemonDetails.stats.map((stat) => (
                 <li
                   key={stat.stat.name}
-                  className="text-md capitalize p-1 bg-slate-200 rounded"
+                  className="text-md capitalize p-1 bg-slate-200 rounded text-black"
                 >
                   {stat.stat.name}: {stat.base_stat}
                 </li>

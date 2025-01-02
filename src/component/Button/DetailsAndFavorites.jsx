@@ -15,7 +15,7 @@ const FavoritesAndDetails = ({ pokemon }) => {
   const isFavorite = favorites.some((fav) => fav.name === pokemon.name);
   return (
     <div>
-      <h1 className="bg-slate-200 hover:bg-indigo-600 hover:text-white transition-colors mb-2 rounded text-xl cursor-pointer">
+      <h1 className="bg-slate-200 hover:bg-indigo-600 hover:text-white transition-colors mb-2 rounded text-xl cursor-pointer text-black">
         <Link className="block" to={`/pokemon/${pokemon.name}`}>
           Details
         </Link>

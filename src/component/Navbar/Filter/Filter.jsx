@@ -8,7 +8,7 @@ const FilterPokemon = () => {
   return (
     <div>
       <select
-        className="py-1 px-3 text-md rounded outline-none pe-10"
+        className="py-1 px-3 text-md rounded outline-none pe-10 bg-indigo-500 text-white"
         value={PokeType}
         onChange={(e) => dispatch(setFilter(e.target.value))}
       >

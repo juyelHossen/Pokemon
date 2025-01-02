@@ -8,11 +8,11 @@ const Favorites = () => {
   return favorites.length ? (
     <ul
       className="container mx-auto sm:mx-4 md:mx-8 lg:mx-16 list-none grid grid-cols-1
-        lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 gap-4 m-auto w-full "
+        lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 gap-4 m-auto w-full dark:bg-gray-900"
     >
       {favorites?.map((f) => (
         <li
-          className="rounded shadow shadow-slate-300 text-center w-full p-4 bg-white"
+          className="rounded hover:shadow-md hover:shadow-slate-50 text-center w-full p-4 bg-white dark:bg-gray-900 dark:text-white"
           key={f.name}
         >
           <img

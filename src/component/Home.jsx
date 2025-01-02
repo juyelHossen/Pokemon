@@ -18,6 +18,7 @@ const Home = () => {
 
   // fetch pokemon by type
   const FilterByType = async () => {
+    setLoading(true);
     if (PokeType === "all") {
       await fetchPokemon();
     } else {
@@ -59,14 +60,14 @@ const Home = () => {
       )}
 
       {filteredPoke.length ? (
-        <div className="overflow-hidden mt-4">
+        <div className="overflow-hidden mt-4 dark:bg-gray-900">
           <ul
-            className="container mx-auto list-none grid grid-cols-1
+            className="dark:bg-gray-900 container mx-auto list-none grid grid-cols-1
        sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5   gap-4 w-full "
           >
             {filteredPoke?.map((pokemon) => (
               <li
-                className="rounded shadow-lg shadow-slate-300 text-center w-full p-4 bg-white"
+                className="dark:bg-gray-900 rounded hover:shadow-md dark:text-white hover:shadow-slate-50 text-center w-full p-4 bg-white"
                 key={pokemon.name}
               >
                 <div>

@@ -15,9 +15,9 @@ const Search = () => {
     <>
       <div className="relative w-full">
         {search.searchBar ? (
-          <div className=" sm:absolute sm:right-0 top-1/2 sm:transform sm:-translate-y-1/2">
+          <div className=" sm:absolute sm:right-0 top-1/2 sm:transform sm:-translate-y-1/2 ">
             <input
-              className="w-full sm:w-96 p-1 rounded-3xl ps-3 pe-9   outline-none border-blue-300 focus:border text-xl"
+              className="w-full sm:w-60 md:w-96 p-1 sm:rounded-3xl ps-3 pe-9   outline-none border-b border-indigo-500 sm:focus:border text-xl"
               type="text"
               placeholder="Search"
               value={search.search}
