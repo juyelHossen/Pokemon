@@ -3,8 +3,8 @@ import Details from "../component/Details/Details";
 import Favorites from "../component/favorites/Favorites";
 import Home from "../component/Home";
 import HeaderNav from "../component/Navbar/HeaderNavbar";
-import SecondHeader from "../component/Navbar/SecondHeader";
 import NotFound from "../component/NotFound/NotFound";
+import RootTwo from "../component/rootLayout/RootTwo";
 
 const rootRouter = createBrowserRouter([
   {
@@ -21,24 +21,27 @@ const rootRouter = createBrowserRouter([
   },
   {
     path: "/favorites",
-    element: <SecondHeader />,
+    element: <RootTwo />,
+    errorElement: <NotFound />,
     children: [
       {
-        path: "/favorites",
+        index: true,
         element: <Favorites />,
       },
     ],
   },
-
   {
     path: "/pokemon/:name",
-    element: <SecondHeader />,
+    element: <RootTwo />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/pokemon/:name",
+        index: true,
         element: <Details />,
       },
     ],
   },
 ]);
+
 export default rootRouter;

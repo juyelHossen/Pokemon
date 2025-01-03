@@ -3,9 +3,11 @@ import SecondHeader from "../Navbar/SecondHeader";
 
 const NotFound = () => {
   return (
-    <div className="h-screen">
-      <SecondHeader />
-      <div className="h-full flex items-center justify-center">
+    <div className="h-screen dark:bg-gray-900">
+      <div className="fixed w-screen">
+        <SecondHeader />
+      </div>
+      <div className="flex items-center justify-center h-full">
         <div className="text-center">
           <h1 className="text-gray-400 text-4xl sm:text-7xl md:text-9xl font-bold text-center">
             4O4

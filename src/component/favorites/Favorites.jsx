@@ -8,11 +8,11 @@ const Favorites = () => {
   return favorites.length ? (
     <ul
       className="container mx-auto sm:mx-4 md:mx-8 lg:mx-16 list-none grid grid-cols-1
-        lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 gap-4 m-auto w-full dark:bg-gray-900"
+        lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 gap-4 m-auto w-full dark:bg-gray-900 pt-4"
     >
       {favorites?.map((f) => (
         <li
-          className="rounded hover:shadow-md hover:shadow-slate-50 text-center w-full p-4 bg-white dark:bg-gray-900 dark:text-white"
+          className="rounded hover:shadow-lg dark:hover:shadow-lg hover:shadow-gray-300 dark:hover:shadow-slate-700 text-center w-full p-4 bg-white dark:bg-gray-900 dark:text-white"
           key={f.name}
         >
           <img
@@ -20,7 +20,7 @@ const Favorites = () => {
               f.url?.split("/")[6]
             }.png`}
             alt={f.name}
-            className="w-full mx-auto border-2 border-indigo-500"
+            className="w-full mx-auto"
           />
           <h3 className="text-xl mb-2">{f.name}</h3>
           <FavoritesAndDetails pokemon={f} />

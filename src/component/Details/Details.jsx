@@ -4,8 +4,11 @@ import FavButton from "../Button/FavButton";
 
 const Details = () => {
   const { name } = useParams();
+  console.log(name);
+
   const [pokemonDetails, setPokemonDetails] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then((res) => res.json())

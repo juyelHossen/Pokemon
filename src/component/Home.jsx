@@ -67,7 +67,7 @@ const Home = () => {
           >
             {filteredPoke?.map((pokemon) => (
               <li
-                className="dark:bg-gray-900 rounded hover:shadow-md dark:text-white hover:shadow-slate-50 text-center w-full p-4 bg-white"
+                className="dark:bg-gray-900 rounded hover:shadow-lg dark:hover:shadow-lg hover:shadow-gray-300 dark:hover:shadow-slate-700 dark:text-white text-center w-full p-4 bg-white"
                 key={pokemon.name}
               >
                 <div>
@@ -76,7 +76,7 @@ const Home = () => {
                       pokemon.url.split("/")[6]
                     }.png`}
                     alt={pokemon.name}
-                    className="w-full mx-auto border-2 border-indigo-500"
+                    className="w-full mx-auto"
                   />
                 </div>
                 <h3 className="text-xl mb-2 capitalize">{pokemon.name}</h3>

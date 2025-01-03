@@ -7,7 +7,7 @@ const SecondHeader = () => {
   const fav = useSelector((state) => state.favorites.favorites);
 
   return (
-    <div className="min-h-screen dark:bg-gray-900">
+    <div className=" dark:bg-gray-900">
       <div className=" text-black dark:text-white bg-slate-100 dark:bg-slate-800 sticky top-0 left-0">
         <nav className="flex items-center justify-between container mx-auto px-5 sm:px-0 relative">
           <Link to={"/"}>
@@ -31,9 +31,6 @@ const SecondHeader = () => {
             <DarkButton />
           </ul>
         </nav>
-      </div>
-      <div className="dark:bg-gray-900">
-        <Outlet />
       </div>
     </div>
   );
